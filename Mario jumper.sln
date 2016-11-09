@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{FE90541A-E02A-BC83-7813-B8E1A50FC826}") = "Mario jumper", "Assembly-CSharp.csproj", "{39A3C12F-250F-2E4F-3960-AE4956F0E527}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39A3C12F-250F-2E4F-3960-AE4956F0E527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A3C12F-250F-2E4F-3960-AE4956F0E527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A3C12F-250F-2E4F-3960-AE4956F0E527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A3C12F-250F-2E4F-3960-AE4956F0E527}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
