@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ObstacleMovement.cs" />
+     <Compile Include="Assets\ObstacleRemover.cs" />
+     <Compile Include="Assets\ScoreManager.cs" />
      <Compile Include="Assets\Script\BackgroundScroll.cs" />
      <Compile Include="Assets\Script\CharacterScript.cs" />
      <Compile Include="Assets\Script\ObstacleGenerate.cs" />

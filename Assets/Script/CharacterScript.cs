@@ -52,9 +52,9 @@ public class CharacterScript : MonoBehaviour {
 	}
 
 	void handleInput(){
-		if (Input.GetKeyDown(KeyCode.DownArrow)) {
+		if (Input.GetKeyDown(KeyCode.S)) {
 			slide = true;
-		} else if (Input.GetKey(KeyCode.UpArrow)) {
+		} else if (Input.GetKey(KeyCode.W)) {
 			jump = true;
 		}
 	}
@@ -72,6 +72,7 @@ public class CharacterScript : MonoBehaviour {
 		}
 		if (slide && !this.myAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Slide")) {
 			this.myAnimator.SetBool ("isSlide", true);
+			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, -jumpForce));
 		} else if (!this.myAnimator.GetNextAnimatorStateInfo (0).IsName ("Slide")) {
 			this.myAnimator.SetBool ("isSlide", false);
 		}
@@ -96,5 +97,13 @@ public class CharacterScript : MonoBehaviour {
 		this.jump = false;
 		this.slide = false;
 
+	}
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		if (collider.name == "obs")
+		{
+			Time.timeScale = 0;
+		}
 	}
 }
