@@ -17,7 +17,7 @@ public class ObstacleMovement : MonoBehaviour {
         if (isRun)
         {
             transform.position -= Vector3.right * speed;
-            speed += 0.00001f;
+            speed += 0.001f;
         }
     }
 }

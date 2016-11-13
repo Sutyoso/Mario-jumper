@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\BackgroundScroll.cs" />
      <Compile Include="Assets\Script\CharacterScript.cs" />
+     <Compile Include="Assets\Script\MainScene.cs" />
      <Compile Include="Assets\Script\ObstacleGenerate.cs" />
      <Compile Include="Assets\Script\ObstacleMovement.cs" />
      <Compile Include="Assets\Script\ObstacleRemover.cs" />
