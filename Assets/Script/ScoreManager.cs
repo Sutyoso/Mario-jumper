@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour {
     public Text hiScoreText;
 
     public float scoreCount;
-    public float hiScoreCount;
+    public static float hiScoreCount;
 
     public float pointsPerSecond = 7;
 

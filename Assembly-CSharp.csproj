@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{39A3C12F-250F-2E4F-3960-AE4956F0E527}</ProjectGuid>
+    <ProjectGuid>{D15EC191-3686-ACFD-3492-13AE890C1801}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,12 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ObstacleMovement.cs" />
-     <Compile Include="Assets\ObstacleRemover.cs" />
-     <Compile Include="Assets\ScoreManager.cs" />
      <Compile Include="Assets\Script\BackgroundScroll.cs" />
      <Compile Include="Assets\Script\CharacterScript.cs" />
      <Compile Include="Assets\Script\ObstacleGenerate.cs" />
+     <Compile Include="Assets\Script\ObstacleMovement.cs" />
+     <Compile Include="Assets\Script\ObstacleRemover.cs" />
+     <Compile Include="Assets\Script\ScoreManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

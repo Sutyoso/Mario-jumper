@@ -3,18 +3,17 @@ using System.Collections;
 
 public class CharacterScript : MonoBehaviour {
 
-	[SerializeField]
-	private float jumpForce=300f;
-
-	private bool isGrounded;
-
-	private bool jump;
-
-	private bool slide;
-
-	private Animator myAnimator;
-
-	private Rigidbody2D myRigidbody; 
+    [SerializeField]
+    private float jumpForce = 300f;
+        
+    private bool isGrounded;
+    private bool jump;
+    private bool slide;
+    private Animator myAnimator;
+    private Rigidbody2D myRigidbody;
+    private ScoreManager SM;
+    private ObstacleGenerate OG;
+    private ObstacleMovement OM;
 
 	[SerializeField]
 	private Transform[] groundPoints;
@@ -29,14 +28,9 @@ public class CharacterScript : MonoBehaviour {
 	void Start () {
 		myAnimator = GetComponent<Animator> ();
 		this.myRigidbody = GetComponent<Rigidbody2D> ();
-	}
-
-
-	//void onCollisionEnter2D(Collision2D coll){
-	//	if (coll.gameObject.tag == "ground") {
-	//		isGrounded = true;
-	//	}
-	//}
+        SM = new ScoreManager();
+        OG = new ObstacleGenerate();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -104,6 +98,9 @@ public class CharacterScript : MonoBehaviour {
 		if (collider.name == "obs")
 		{
 			Time.timeScale = 0;
+            SM.scoreIncreasing = false;
+            OG.setIsRun(false);
+            OM.isRun = false;
 		}
 	}
 }
