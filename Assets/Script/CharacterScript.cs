@@ -11,9 +11,6 @@ public class CharacterScript : MonoBehaviour {
     private bool slide;
     private Animator myAnimator;
     private Rigidbody2D myRigidbody;
-    private ScoreManager SM;
-    private ObstacleGenerate OG;
-    private ObstacleMovement OM;
 
 	[SerializeField]
 	private Transform[] groundPoints;
@@ -28,8 +25,6 @@ public class CharacterScript : MonoBehaviour {
 	void Start () {
 		myAnimator = GetComponent<Animator> ();
 		this.myRigidbody = GetComponent<Rigidbody2D> ();
-        SM = new ScoreManager();
-        OG = new ObstacleGenerate();
     }
 
 	// Update is called once per frame
@@ -93,14 +88,20 @@ public class CharacterScript : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter2D(Collider2D collider)
+	void OnCollisionEnter2D(Collision2D collider)
 	{
-		if (collider.name == "obs")
+		if (collider.gameObject.name == "obs")
 		{
 			Time.timeScale = 0;
-            SM.scoreIncreasing = false;
-            OG.setIsRun(false);
-            OM.isRun = false;
+			//collider.gameObject.GetComponent<ScoreManager> ().scoreIncreasing = false;
+			//collider.gameObject.GetComponent<ObstacleGenerate> ().isRun = false;
+			collider.gameObject.GetComponent<ObstacleMovement> ().isRun = false;
+			//myRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+			//Application.LoadLevel ("Runner");
+
+			//SM.scoreIncreasing = true;
+			//OG.setIsRun(true);
+			//OM.isRun = true;
 		}
 	}
 }

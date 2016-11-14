@@ -14,7 +14,7 @@ public class ObstacleRemover : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-	void OnTriggerEnter2D(Collision collider)
+	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.name == "obs")
 		{

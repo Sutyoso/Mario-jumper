@@ -8,7 +8,7 @@ public class ObstacleGenerate : MonoBehaviour {
 
 	private Transform campos;
 
-    private bool isRun = true;
+    public bool isRun = true;
 	// Use this for initialization
 	void Start () {
         if (isRun)
@@ -22,7 +22,10 @@ public class ObstacleGenerate : MonoBehaviour {
     }
 
 	private void obsRandom(){
-		GameObject temp = (GameObject) Instantiate (obs [Random.Range (0, obs.Length)],transform.position,Quaternion.identity);
+		GameObject obstacle = obs [Random.Range (0, obs.Length)];
+		Vector2 position = transform.position;
+		position+= Vector2.up * obstacle.transform.position.y;
+		GameObject temp = (GameObject) Instantiate (obstacle,position,Quaternion.identity);
 		temp.name = "obs";
 		temp.AddComponent<PolygonCollider2D> ();
 		temp.GetComponent<PolygonCollider2D> ().isTrigger = true;
@@ -31,8 +34,4 @@ public class ObstacleGenerate : MonoBehaviour {
 		float tempF = Random.Range (2, 3);
 		Invoke ("obsRandom", tempF);
 	}
-
-    public void setIsRun(bool isRun) {
-        isRun = isRun;
-    }
 }
