@@ -93,15 +93,7 @@ public class CharacterScript : MonoBehaviour {
 		if (collider.gameObject.name == "obs")
 		{
 			Time.timeScale = 0;
-			//collider.gameObject.GetComponent<ScoreManager> ().scoreIncreasing = false;
-			//collider.gameObject.GetComponent<ObstacleGenerate> ().isRun = false;
 			collider.gameObject.GetComponent<ObstacleMovement> ().isRun = false;
-			//myRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-			//Application.LoadLevel ("Runner");
-
-			//SM.scoreIncreasing = true;
-			//OG.setIsRun(true);
-			//OM.isRun = true;
 		}
 	}
 }

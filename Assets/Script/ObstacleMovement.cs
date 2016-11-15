@@ -6,12 +6,11 @@ public class ObstacleMovement : MonoBehaviour {
 	float speed = 0.3f;
 
     public bool isRun = true;
-    // Use this for initialization
-	void Start () {
-	
-	}
 
     // Update is called once per frame
+	/*
+	 * method ini berguna agar obstacle tersebut dapat mundur ke arah character
+	*/
     void Update()
     {
         if (isRun)
