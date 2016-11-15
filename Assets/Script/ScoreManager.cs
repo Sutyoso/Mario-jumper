@@ -22,6 +22,9 @@ public class ScoreManager : MonoBehaviour {
         }
 
     }
+	/*
+	 * method ini berisi command untuk menambahkan score 
+	*/
     void Update()
     {
         if (scoreIncreasing)
