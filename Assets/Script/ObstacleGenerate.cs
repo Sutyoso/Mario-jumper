@@ -10,6 +10,9 @@ public class ObstacleGenerate : MonoBehaviour {
 
     public bool isRun = true;
 	// Use this for initialization
+	/*
+	 * method ini berguna untuk memanggil obsRandom jika backroundnya berjalan 
+	*/
 	void Start () {
         if (isRun)
         {
@@ -20,7 +23,9 @@ public class ObstacleGenerate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
     }
-
+	/*
+	 * method ini berguna untuk merandom kemunculan dari obstacle
+	*/
 	private void obsRandom(){
 		GameObject obstacle = obs [Random.Range (0, obs.Length)];
 		Vector2 position = transform.position;

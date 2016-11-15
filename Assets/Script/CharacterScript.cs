@@ -22,6 +22,9 @@ public class CharacterScript : MonoBehaviour {
 	private LayerMask whatIsGround;
 
 	// Use this for initialization
+	/*
+	 * pada method start ini terdapat constructor yang berguna untuk menginisialisasi animator dan rigidbody2d
+	*/
 	void Start () {
 		myAnimator = GetComponent<Animator> ();
 		this.myRigidbody = GetComponent<Rigidbody2D> ();
@@ -47,6 +50,10 @@ public class CharacterScript : MonoBehaviour {
 			jump = true;
 		}
 	}
+	/*
+	 * dalam method handleMovement berisi command command untuk lompat dan slide
+	 * dalam method ini juga berisi command command untuk mengganti animasi
+	*/
 
 	void handleMovement(){
 		if (jump && isGrounded) {
@@ -66,6 +73,9 @@ public class CharacterScript : MonoBehaviour {
 			this.myAnimator.SetBool ("isSlide", false);
 		}
 	}
+	/*
+	 * method ini berisi command command untuk mengecek apakah character tersebut menginjak tanah atau tidak 
+	*/
 
 	private bool groundedChecker(){
 		if (myRigidbody.velocity.y <= 0) {
@@ -88,6 +98,9 @@ public class CharacterScript : MonoBehaviour {
 
 	}
 
+	/*
+	 * method ini berisi instruksi jika character tabrakan dengan obstacle maka obstacle dan character akan difreeze
+	*/
 	void OnCollisionEnter2D(Collision2D collider)
 	{
 		if (collider.gameObject.name == "obs")
