@@ -51,7 +51,6 @@ public class CharacterScript : MonoBehaviour {
 	void handleMovement(){
 		if (jump && isGrounded) {
 			isGrounded = false;
-			//GetComponent<Rigidbody2D> ().AddForce (new Vector2(0,jumpForce));
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpForce));
 			this.myAnimator.SetBool ("isJumping", true);
 		} else if (jump && !isGrounded) {
@@ -92,8 +91,15 @@ public class CharacterScript : MonoBehaviour {
 	{
 		if (collider.gameObject.name == "obs")
 		{
-			Time.timeScale = 0;
+		
 			collider.gameObject.GetComponent<ObstacleMovement> ().isRun = false;
-		}
-	}
+            Application.LoadLevel("Game Over");
+            collider.gameObject.GetComponent<ObstacleMovement>().isRun = true;
+            //collider.gameObject.GetComponent<char().isRun = false;
+            collider.gameObject.GetComponent<ObstacleGenerate>().isRun = true;
+            collider.gameObject.GetComponent<ScoreManager>().scoreIncreasing = true;
+
+
+        }
+    }
 }
