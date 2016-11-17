@@ -28,6 +28,7 @@ public class CharacterScript : MonoBehaviour {
 	void Start () {
 		myAnimator = GetComponent<Animator> ();
 		this.myRigidbody = GetComponent<Rigidbody2D> ();
+        
     }
 
 	// Update is called once per frame
@@ -37,7 +38,7 @@ public class CharacterScript : MonoBehaviour {
 
 	void FixedUpdate(){
 		isGrounded = groundedChecker ();
-
+  
 		handleMovement ();
 
 		resetValue ();
@@ -57,7 +58,8 @@ public class CharacterScript : MonoBehaviour {
 
 	void handleMovement(){
 		if (jump && isGrounded) {
-			isGrounded = false;
+            GetComponent<AudioSource>().Play();
+            isGrounded = false;
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpForce));
 			this.myAnimator.SetBool ("isJumping", true);
 		} else if (jump && !isGrounded) {

@@ -27,6 +27,7 @@ public class ScoreManager : MonoBehaviour {
 	*/
     void Update()
     {
+       
         if (scoreIncreasing)
         {
             scoreCount += pointsPerSecond * Time.deltaTime;
@@ -36,7 +37,12 @@ public class ScoreManager : MonoBehaviour {
             hiScoreCount = scoreCount;
             PlayerPrefs.SetFloat("HighScore", hiScoreCount);
         }
+       
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
         hiScoreText.text = "High Score: " + Mathf.Round(hiScoreCount);
+        if (Mathf.Round(scoreCount) % 100 == 0 )
+        {
+            GetComponent<AudioSource>().Play();
+        }
     }
 }
