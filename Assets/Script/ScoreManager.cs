@@ -45,4 +45,8 @@ public class ScoreManager : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         }
     }
+    public float getCount()
+    {
+        return scoreCount;
+    }
 }
