@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     public float scoreCount;
     [SerializeField]
-    public float hiScoreCount;
+    public static float hiScoreCount;
 
     public float pointsPerSecond = 7;
 

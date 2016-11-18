@@ -18,10 +18,7 @@ public class ObstacleGenerate : MonoBehaviour
     {
         if (isRun)
         {
-            
-                obsRandom();
-            
-
+            obsRandom();
         }
     }
 
@@ -34,13 +31,15 @@ public class ObstacleGenerate : MonoBehaviour
 	*/
     private void obsRandom()
     {
-        GameObject obstacle = obs[Random.Range(0, obs.Length)];
+        int obsIndex = Random.Range(4, obs.Length);
+        GameObject obstacle = obs[obsIndex];
         Vector2 position = transform.position;
+        if (obsIndex == 7|| obsIndex==6) {
+            position = new Vector2(13.51f, Random.Range(-3.6f, -2.5f));
+        }
         position += Vector2.up * obstacle.transform.position.y;
         GameObject temp = (GameObject)Instantiate(obstacle, position, Quaternion.identity);
         temp.name = "obs";
-        temp.AddComponent<PolygonCollider2D>();
-        temp.GetComponent<PolygonCollider2D>().isTrigger = true;
         temp.AddComponent<ObstacleRemover>();
         temp.AddComponent<ObstacleMovement>();
         float tempF = Random.Range(2, 3);

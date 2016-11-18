@@ -14,6 +14,7 @@ public class CharacterScript : MonoBehaviour
     private bool slide;
     private Animator myAnimator;
     private Rigidbody2D myRigidbody;
+    private BoxCollider2D myBoxColl;
 
     [SerializeField]
     private Transform[] groundPoints;
@@ -31,6 +32,7 @@ public class CharacterScript : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
         this.myRigidbody = GetComponent<Rigidbody2D>();
+        this.myBoxColl = GetComponent<BoxCollider2D>();
 
     }
 
@@ -59,11 +61,16 @@ public class CharacterScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             slide = true;
-
+            this.myBoxColl.size = new Vector2(2.32f, 3f);
+            this.myAnimator.SetBool("isSlide", true);
         }
-        else if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyUp(KeyCode.S)) {
+            slide = false;
+            this.myBoxColl.size = new Vector2(2.32f, 4.39f);
+            this.myAnimator.SetBool("isSlide", false);
+        }
+        if (Input.GetKey(KeyCode.W))
         {
-
             jump = true;
         }
     }
@@ -81,7 +88,7 @@ public class CharacterScript : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
             this.myAnimator.SetBool("isJumping", true);
         }
-        else if (jump && !isGrounded)
+        if (jump && !isGrounded)
         {
             isGrounded = true;
             jump = false;
@@ -89,12 +96,11 @@ public class CharacterScript : MonoBehaviour
         }
         if (slide && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
         {
-            this.myAnimator.SetBool("isSlide", true);
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -jumpForce));
+            //this.myAnimator.SetBool("isSlide", true);
         }
-        else if (!this.myAnimator.GetNextAnimatorStateInfo(0).IsName("Slide"))
+        if (!slide)
         {
-            this.myAnimator.SetBool("isSlide", false);
+            //this.myAnimator.SetBool("isSlide", false);
         }
     }
     /// <summary>
@@ -144,15 +150,9 @@ public class CharacterScript : MonoBehaviour
     {
         if (collider.gameObject.name == "obs")
         {
-
             collider.gameObject.GetComponent<ObstacleMovement>().isRun = false;
             Application.LoadLevel("Game Over");
             collider.gameObject.GetComponent<ObstacleMovement>().isRun = true;
-            //collider.gameObject.GetComponent<char().isRun = false;
-            collider.gameObject.GetComponent<ObstacleGenerate>().isRun = true;
-            collider.gameObject.GetComponent<ScoreManager>().scoreIncreasing = true;
-
-
         }
     }
 }

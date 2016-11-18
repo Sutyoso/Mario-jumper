@@ -12,7 +12,6 @@ public class GameOverScene : MonoBehaviour
    public void menuB()
     {
         Application.LoadLevel("Main");
-
     }
 
 
