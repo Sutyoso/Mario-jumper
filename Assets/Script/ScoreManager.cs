@@ -2,6 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// kelas ini berfungsi untuk mengatur score dan high score
+/// ketika game mulai maka highscore akan menjadi 0
+/// tetapi pemain me-retry game highscore akan menjadi highscore yang didapatkan oleh user tersebut
+/// </summary>
 public class ScoreManager : MonoBehaviour
 {
 
@@ -14,20 +19,11 @@ public class ScoreManager : MonoBehaviour
 
     public float pointsPerSecond = 7;
 
-    public bool scoreIncreasing;
+    private bool scoreIncreasing=true;
 
-
-    void Start()
-    {
-        if (PlayerPrefs.GetFloat("HighScore") != null)
-        {
-            hiScoreCount = PlayerPrefs.GetFloat("HighScore");
-        }
-
-    }
-    /*
-	 * method ini berisi command untuk menambahkan score 
-	*/
+    /// <summary>
+    /// method ini berisi command untuk menambahkan score berdasarkan waktu dan attribut pointPerSecond
+    /// </summary>
     void Update()
     {
 
@@ -38,7 +34,6 @@ public class ScoreManager : MonoBehaviour
         if (scoreCount > hiScoreCount)
         {
             hiScoreCount = scoreCount;
-            PlayerPrefs.SetFloat("HighScore", hiScoreCount);
         }
 
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
@@ -48,6 +43,11 @@ public class ScoreManager : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
     }
+
+    /// <summary>
+    /// mengembalikan score terakhir yang didapatkan oleh pemain
+    /// </summary>
+    /// <returns></returns>
     public float getCount()
     {
         return scoreCount;

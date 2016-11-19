@@ -26,9 +26,9 @@ public class CharacterScript : MonoBehaviour
     private LayerMask whatIsGround;
 
     /// <summary>
-    /// pada method start ini terdapat constructor yang berguna untuk menginisialisasi animator dan rigidbody2d
+    /// pada method start ini terdapat constructor yang berguna untuk menginisialisasi animator dan rigidbody2d juga BoxCollider2D
     /// </summary>
-    void Start()
+    public void Start()
     {
         myAnimator = GetComponent<Animator>();
         this.myRigidbody = GetComponent<Rigidbody2D>();
@@ -38,25 +38,24 @@ public class CharacterScript : MonoBehaviour
 
     /// <summary>
     ///    Update is called once per frame
+    ///    methods untuk membungkus methods handleInput();
     /// </summary>
 
-    void Update()
+    public void Update()
     {
         handleInput();
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         isGrounded = groundedChecker();
-
         handleMovement();
-
         resetValue();
     }
     /// <summary>
-    /// mengatur input
+    /// mengatur input dari user
     /// </summary>
-    void handleInput()
+    private void handleInput()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -72,6 +71,7 @@ public class CharacterScript : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             jump = true;
+            this.myAnimator.SetBool("isJumping", true);
         }
     }
     /// <summary>
@@ -79,36 +79,28 @@ public class CharacterScript : MonoBehaviour
     /// dalam method ini juga berisi command command untuk mengganti animasi
     /// </summary>
 
-    void handleMovement()
+    private void handleMovement()
     {
         if (jump && isGrounded)
         {
             GetComponent<AudioSource>().Play();
             isGrounded = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-            this.myAnimator.SetBool("isJumping", true);
         }
         if (jump && !isGrounded)
         {
             isGrounded = true;
-            jump = false;
             this.myAnimator.SetBool("isJumping", false);
         }
-        if (slide && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
-        {
-            //this.myAnimator.SetBool("isSlide", true);
-        }
-        if (!slide)
-        {
-            //this.myAnimator.SetBool("isSlide", false);
-        }
     }
+    
     /// <summary>
     ///  method ini berisi command command untuk mengecek apakah character tersebut menginjak tanah atau tidak 
     /// </summary>
     /// <returns>
     /// mengembalikan true jika collider menyentuh tanah dan false jika tidak menyentuh tanah
     /// </returns>
+    /// 
 
     private bool groundedChecker()
     {
@@ -133,7 +125,7 @@ public class CharacterScript : MonoBehaviour
     /// 
     /// mereset value dari jump dan slide
     /// </summary>
-    void resetValue()
+    private void resetValue()
     {
         this.jump = false;
         this.slide = false;
@@ -145,8 +137,10 @@ public class CharacterScript : MonoBehaviour
     /// </summary>
     /// <param name="collider">
     /// merupakan collider dari obstacle
-    /// </param>
-    void OnCollisionEnter2D(Collision2D collider)
+    /// </summary>
+    /// mengganti scene dari scene Runner menjadi Scene Game Over
+    /// membuat Obstacle menjadi dapat berjalan lagi
+    public void OnCollisionEnter2D(Collision2D collider)
     {
         if (collider.gameObject.name == "obs")
         {

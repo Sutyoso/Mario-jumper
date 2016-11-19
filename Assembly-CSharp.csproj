@@ -53,6 +53,7 @@
      <Compile Include="Assets\Script\ObstacleMovement.cs" />
      <Compile Include="Assets\Script\ObstacleRemover.cs" />
      <Compile Include="Assets\Script\ScoreManager.cs" />
+     <Compile Include="Assets\Script\lighting.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

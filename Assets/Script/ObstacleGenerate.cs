@@ -6,32 +6,22 @@ public class ObstacleGenerate : MonoBehaviour
 
     [SerializeField]
     private GameObject[] obs;
-
-    private Transform campos;
-
-    public bool isRun = true;
     // Use this for initialization
-    /*
-	 * method ini berguna untuk memanggil obsRandom jika backroundnya berjalan 
-	*/
-    void Start()
+    /// <summary>
+    /// merupakan methods pembungkus dari methods obsRandom
+    /// </summary>
+    public void Start()
     {
-        if (isRun)
-        {
-            obsRandom();
-        }
+        obsRandom();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-    /*
-	 * method ini berguna untuk merandom kemunculan dari obstacle
-	*/
+    
+    /// <summary>
+    /// method ini berguna untuk merandom obstacle yang akan muncul
+    /// jika obstacle tersebut merupakan obstacle terbang akan di random nilai ketinggiannya
+    /// </summary>
     private void obsRandom()
     {
-        int obsIndex = Random.Range(4, obs.Length);
+        int obsIndex = Random.Range(0, obs.Length);
         GameObject obstacle = obs[obsIndex];
         Vector2 position = transform.position;
         if (obsIndex == 7|| obsIndex==6) {
@@ -42,7 +32,7 @@ public class ObstacleGenerate : MonoBehaviour
         temp.name = "obs";
         temp.AddComponent<ObstacleRemover>();
         temp.AddComponent<ObstacleMovement>();
-        float tempF = Random.Range(2, 3);
+        float tempF = Random.Range(0.5f, 2f);
         Invoke("obsRandom", tempF);
     }
    
