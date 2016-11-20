@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 /// <summary>
@@ -11,18 +12,16 @@ public class GameOverScene : MonoBehaviour
     /// <summary>
     /// untuk mengubah menjadi scene Runner
     /// </summary>
-    public void playB (){
-        Application.LoadLevel("Runner");
-
+    public void playB()
+    {
+        SceneManager.LoadScene("Runner", LoadSceneMode.Single);
     }
 
     /// <summary>
     /// untuk mengubah dari scene game Over menjadi scene Main
     /// </summary>
-   public void menuB()
+    public void menuB()
     {
-        Application.LoadLevel("Main");
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
-
-
 }

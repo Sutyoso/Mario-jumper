@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 /// kelas ini untuk mengubah scene sesuai dengan pilihan dari user
@@ -11,8 +12,7 @@ public class MainScene : MonoBehaviour {
     /// </summary>
 
     public void play() {
-        Application.LoadLevel("Runner");
-
+        SceneManager.LoadScene("Runner", LoadSceneMode.Single);
     }
 
     /// <summary>

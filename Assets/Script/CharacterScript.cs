@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
+
 /// <summary>
 /// kelas ini berguna untuk mengatur semua pergerakan dari character
 /// </summary>
+/// <seealso cref="UnityEngine.MonoBehaviour" />
 public class CharacterScript : MonoBehaviour
 {
 
@@ -11,7 +14,6 @@ public class CharacterScript : MonoBehaviour
 
     private bool isGrounded;
     private bool jump;
-    private bool slide;
     private Animator myAnimator;
     private Rigidbody2D myRigidbody;
     private BoxCollider2D myBoxColl;
@@ -46,6 +48,11 @@ public class CharacterScript : MonoBehaviour
         handleInput();
     }
 
+    /// <summary>
+    /// Fixeds the update.
+    /// untuk menginisialisasikan nilai attribut isGrounded dengan memanggil methods groundedChecker
+    /// serta membungkus methods handleMovement dan methods resetValue
+    /// </summary>
     public void FixedUpdate()
     {
         isGrounded = groundedChecker();
@@ -59,12 +66,11 @@ public class CharacterScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            slide = true;
             this.myBoxColl.size = new Vector2(2.32f, 3f);
             this.myAnimator.SetBool("isSlide", true);
         }
-        if (Input.GetKeyUp(KeyCode.S)) {
-            slide = false;
+        if (Input.GetKeyUp(KeyCode.S))
+        {
             this.myBoxColl.size = new Vector2(2.32f, 4.39f);
             this.myAnimator.SetBool("isSlide", false);
         }
@@ -93,7 +99,7 @@ public class CharacterScript : MonoBehaviour
             this.myAnimator.SetBool("isJumping", false);
         }
     }
-    
+
     /// <summary>
     ///  method ini berisi command command untuk mengecek apakah character tersebut menginjak tanah atau tidak 
     /// </summary>
@@ -128,24 +134,25 @@ public class CharacterScript : MonoBehaviour
     private void resetValue()
     {
         this.jump = false;
-        this.slide = false;
 
     }
 
     /// <summary>
-    /// method ini berisi instruksi jika character tabrakan dengan obstacle maka obstacle dan character akan difreeze
+    /// method ini berisi instruksi jika character tabrakan dengan obstacle maka obstacle dan character akan difreeze.
     /// </summary>
     /// <param name="collider">
-    /// merupakan collider dari obstacle
+    /// untuk mengetahui nama collider yang terkena Character.
+    /// mengganti scene dari scene Runner menjadi Scene Game Over.
+    /// </param>
+    /// <summary>
+    /// membuat Obstacle menjadi dapat berjalan lagi.
     /// </summary>
-    /// mengganti scene dari scene Runner menjadi Scene Game Over
-    /// membuat Obstacle menjadi dapat berjalan lagi
     public void OnCollisionEnter2D(Collision2D collider)
     {
         if (collider.gameObject.name == "obs")
         {
             collider.gameObject.GetComponent<ObstacleMovement>().isRun = false;
-            Application.LoadLevel("Game Over");
+            SceneManager.LoadScene("Game Over", LoadSceneMode.Single);
             collider.gameObject.GetComponent<ObstacleMovement>().isRun = true;
         }
     }

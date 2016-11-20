@@ -1,0 +1,44 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 920M (ID=0x1299)
+    Vendor:   NVIDIA
+    VRAM:     2020 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.063 seconds
+Platform assembly: C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\asus\Documents\GitHub\Mario-jumper\MarioJumper_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initialized touch support.
+UnloadTime: 0.811321 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.606407 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 340.
+Total: 0.244374 ms (FindLiveObjects: 0.022482 ms CreateObjectMapping: 0.023459 ms MarkObjects: 0.185724 ms  DeleteObjects: 0.011241 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.486793 ms
+
+Unloading 132 unused Assets to reduce memory usage. Loaded Objects now: 218.
+Total: 0.452580 ms (FindLiveObjects: 0.021504 ms CreateObjectMapping: 0.021504 ms MarkObjects: 0.193055 ms  DeleteObjects: 0.215537 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.505854 ms
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 202.
+Total: 0.277120 ms (FindLiveObjects: 0.016617 ms CreateObjectMapping: 0.012707 ms MarkObjects: 0.179859 ms  DeleteObjects: 0.067447 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1444 -> priority: 1 

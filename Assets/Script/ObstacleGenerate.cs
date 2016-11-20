@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Class ObstacleGenerate.
+/// kelas untuk mengenerate obstacle berdasarkan waktu dan jenis obstcle yang akan di random
+/// </summary>
 public class ObstacleGenerate : MonoBehaviour
 {
 
@@ -24,15 +28,18 @@ public class ObstacleGenerate : MonoBehaviour
         int obsIndex = Random.Range(0, obs.Length);
         GameObject obstacle = obs[obsIndex];
         Vector2 position = transform.position;
-        if (obsIndex == 7|| obsIndex==6) {
-            position = new Vector2(13.51f, Random.Range(-3.6f, -2.5f));
+        if (obsIndex == 6) {
+            position = new Vector2(13.51f, Random.Range(-3.7f, -2.5f));
+        }
+        else if (obsIndex == 7) {
+            position = new Vector2(13.51f, Random.Range(-4.5f,-2.5f));
         }
         position += Vector2.up * obstacle.transform.position.y;
         GameObject temp = (GameObject)Instantiate(obstacle, position, Quaternion.identity);
         temp.name = "obs";
         temp.AddComponent<ObstacleRemover>();
         temp.AddComponent<ObstacleMovement>();
-        float tempF = Random.Range(0.5f, 2f);
+        float tempF = Random.Range(0.8f, 1.5f);
         Invoke("obsRandom", tempF);
     }
    

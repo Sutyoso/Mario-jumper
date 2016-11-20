@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Class ObstacleRemover.
+/// berfungsi untuk menghapus obstacle jika syaratnya telah terpenuhi
+/// </summary>
 public class ObstacleRemover : MonoBehaviour {
 
     // Update is called once per frame

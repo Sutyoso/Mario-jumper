@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assembly-CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:BackgroundScroll">
+            <summary>
+            kelas ini berguna untuk mengulang background.
+            
+            </summary>
+        </member>
+        <member name="M:BackgroundScroll.Update">
+            <summary>
+            method ini berisi instruksi agar background pada game tersebut dapat berjalan
+            </summary>
+        </member>
+        <member name="T:CharacterScript">
+            <summary>
+            kelas ini berguna untuk mengatur semua pergerakan dari character
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="M:CharacterScript.Start">
+            <summary>
+            pada method start ini terdapat constructor yang berguna untuk menginisialisasi animator dan rigidbody2d juga BoxCollider2D
+            </summary>
+        </member>
+        <member name="M:CharacterScript.Update">
+            <summary>
+               Update is called once per frame
+               methods untuk membungkus methods handleInput();
+            </summary>
+        </member>
+        <member name="M:CharacterScript.FixedUpdate">
+            <summary>
+            Fixeds the update.
+            untuk menginisialisasikan nilai attribut isGrounded dengan memanggil methods groundedChecker
+            serta membungkus methods handleMovement dan methods resetValue
+            </summary>
+        </member>
+        <member name="M:CharacterScript.handleInput">
+            <summary>
+            mengatur input dari user
+            </summary>
+        </member>
+        <member name="M:CharacterScript.handleMovement">
+            <summary>
+            dalam method handleMovement berisi command command untuk lompat dan slide
+            dalam method ini juga berisi command command untuk mengganti animasi
+            </summary>
+        </member>
+        <member name="M:CharacterScript.groundedChecker">
+            <summary>
+             method ini berisi command command untuk mengecek apakah character tersebut menginjak tanah atau tidak 
+            </summary>
+            <returns>
+            mengembalikan true jika collider menyentuh tanah dan false jika tidak menyentuh tanah
+            </returns>
+            
+        </member>
+        <member name="M:CharacterScript.resetValue">
+            <summary>
+            
+            mereset value dari jump dan slide
+            </summary>
+        </member>
+        <member name="M:CharacterScript.OnCollisionEnter2D(UnityEngine.Collision2D)">
+            <summary>
+            method ini berisi instruksi jika character tabrakan dengan obstacle maka obstacle dan character akan difreeze.
+            </summary>
+            <param name="collider">
+            untuk mengetahui nama collider yang terkena Character.
+            mengganti scene dari scene Runner menjadi Scene Game Over.
+            </param>
+            <summary>
+            membuat Obstacle menjadi dapat berjalan lagi.
+            </summary>
+        </member>
+        <member name="T:GameOverScene">
+            <summary>
+            kelas ini berguna untuk mengubah scene dari scene game Over menjadi scene lainnya
+            </summary>
+        </member>
+        <member name="M:GameOverScene.playB">
+            <summary>
+            untuk mengubah menjadi scene Runner
+            </summary>
+        </member>
+        <member name="M:GameOverScene.menuB">
+            <summary>
+            untuk mengubah dari scene game Over menjadi scene Main
+            </summary>
+        </member>
+        <member name="T:MainScene">
+            kelas ini untuk mengubah scene sesuai dengan pilihan dari user
+        </member>
+        <member name="M:MainScene.play">
+            <summary>
+            method play ini terdapat pada scene 
+            method ini berguna saat tombol play dipencet maka akan dialihkan ke scene game
+            </summary>
+        </member>
+        <member name="M:MainScene.quit">
+            <summary>
+            method play ini terdapat pada scene menu
+            method ini berguna saat tombol play dipencet maka akan dialihkan ke scene game
+            </summary>
+        </member>
+        <member name="T:ObstacleGenerate">
+            <summary>
+            Class ObstacleGenerate.
+            kelas untuk mengenerate obstacle berdasarkan waktu dan jenis obstcle yang akan di random
+            </summary>
+        </member>
+        <member name="M:ObstacleGenerate.Start">
+            <summary>
+            merupakan methods pembungkus dari methods obsRandom
+            </summary>
+        </member>
+        <member name="M:ObstacleGenerate.obsRandom">
+            <summary>
+            method ini berguna untuk merandom obstacle yang akan muncul
+            jika obstacle tersebut merupakan obstacle terbang akan di random nilai ketinggiannya
+            </summary>
+        </member>
+        <member name="T:ObstacleMovement">
+            <summary>
+            kelas yang berfungsi untuk membuat obstacle dapat berjalan
+            </summary>
+        </member>
+        <member name="F:ObstacleMovement.isRun">
+            <summary>
+            The is run
+            untuk menentukan apakah methods Update boleh berjalan
+            jika tidak, isRun akan di set menjadi false
+            </summary>
+        </member>
+        <member name="M:ObstacleMovement.Update">
+            <summary>
+            method ini berguna agar obstacle tersebut dapat mundur ke arah character
+            speed perpindahan obstacle akan bertambah cepat
+            </summary>
+        </member>
+        <member name="T:ObstacleRemover">
+            <summary>
+            Class ObstacleRemover.
+            berfungsi untuk menghapus obstacle jika syaratnya telah terpenuhi
+            </summary>
+        </member>
+        <member name="M:ObstacleRemover.Update">
+            <summary>
+            method yang ada pada update digunakan untuk menghilangkan obstacle
+            method pada onTriggerEnter2D berguna saat obstacle tersebut menyentuh box collider yang ada di kanan background maka
+            obstacle tersebut akan hilang
+            </summary>
+        </member>
+        <member name="T:ScoreManager">
+            <summary>
+            kelas ini berfungsi untuk mengatur score dan high score
+            ketika game mulai maka highscore akan menjadi 0
+            tetapi pemain me-retry game highscore akan menjadi highscore yang didapatkan oleh user tersebut
+            </summary>
+        </member>
+        <member name="F:ScoreManager.scoreText">
+            <summary>
+            berfungsi untuk menampilkan text score yang didapat oleh player pada scene Runner beserta scoreCount
+            </summary>
+        </member>
+        <member name="F:ScoreManager.hiScoreText">
+            <summary>
+            menampilkan high score text yang didapat oleh player selama bermain
+            </summary>
+        </member>
+        <member name="F:ScoreManager.scoreCount">
+            <summary>
+            attribut untuk mencatat score yang didapat oleh player
+            </summary>
+        </member>
+        <member name="F:ScoreManager.hiScoreCount">
+            <summary>
+            attribut untuk mencatat high score player selama bermain
+            </summary>
+        </member>
+        <member name="F:ScoreManager.pointsPerSecond">
+            <summary>
+            untuk menentukan jumlah score yang didapatkan oleh player per detik
+            </summary>
+        </member>
+        <member name="M:ScoreManager.Update">
+            <summary>
+            method ini berisi command untuk menambahkan score berdasarkan waktu dan attribut pointPerSecond
+            </summary>
+        </member>
+        <member name="M:ScoreManager.getCount">
+            <summary>
+            mengembalikan score terakhir yang didapatkan oleh pemain
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:lighting">
+            <summary>
+            Class lighting.
+            kelas ini berfungsi untuk menentukan intensitas cahaya kepada background
+            </summary>
+        </member>
+        <member name="M:lighting.Start">
+            <summary>
+            meng-cover methods lightRand supaya diinisiasikan
+            </summary>
+        </member>
+        <member name="M:lighting.lightRand">
+            <summary>
+            methods untuk menrandom nilai intensity dari light dan di set ke GameObject Light
+            </summary>
+        </member>
+    </members>
+</doc>

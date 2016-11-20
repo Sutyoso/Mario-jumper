@@ -61,9 +61,6 @@ C:\Users\chrisandy\Documents\GitHub\Mario-jumper\Temp\bin\Debug\UnityEngine.Netw
 C:\Users\chrisandy\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\chrisandy\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.dll
 C:\Users\chrisandy\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.pdb
-C:\Users\asus\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-C:\Users\asus\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.dll
-C:\Users\asus\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.pdb
 C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\UnityEditor.dll
@@ -82,3 +79,25 @@ C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\UnityEngine.xml
 C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\UnityEditor.xml
 C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\asus\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\obj\Debug\Assembly-CSharp.pdb
+C:\Users\asus\Documents\GitHub\Mario-jumper\Temp\bin\Debug\Ninja Jumper.XML
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Ninja Jumper.XML
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Assembly-CSharp.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Assembly-CSharp.pdb
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEditor.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEngine.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEngine.Networking.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEngine.UI.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Mono.Cecil.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Unity.SerializationLogic.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Unity.DataContract.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\ICSharpCode.NRefactory.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Unity.UNetWeaver.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Unity.CecilTools.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Mono.Cecil.Pdb.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\Mono.Cecil.Mdb.dll
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEngine.xml
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEditor.xml
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEngine.UI.xml
+C:\Users\asus\Documents\GitHub\Mario-jumper\Documentation\UnityEngine.Networking.xml

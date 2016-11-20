@@ -8,6 +8,11 @@ public class ObstacleMovement : MonoBehaviour {
     [SerializeField]
 	private float speed = 0.3f;
 
+    /// <summary>
+    /// The is run
+    /// untuk menentukan apakah methods Update boleh berjalan
+    /// jika tidak, isRun akan di set menjadi false
+    /// </summary>
     public bool isRun = true;
 
     // Update is called once per frame
@@ -20,7 +25,7 @@ public class ObstacleMovement : MonoBehaviour {
         if (isRun)
         {
             transform.position -= Vector3.right * speed;
-            this.speed += 0.001f;
+            this.speed += 0.0001f;
         }
     }
 }

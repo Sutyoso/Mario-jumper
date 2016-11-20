@@ -10,14 +10,30 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
 
+    /// <summary>
+    /// berfungsi untuk menampilkan text score yang didapat oleh player pada scene Runner beserta scoreCount
+    /// </summary>
     public Text scoreText;
+    /// <summary>
+    /// menampilkan high score text yang didapat oleh player selama bermain
+    /// </summary>
     public Text hiScoreText;
+    /// <summary>
+    /// attribut untuk mencatat score yang didapat oleh player
+    /// </summary>
     [SerializeField]
     public float scoreCount;
+    /// <summary>
+    /// attribut untuk mencatat high score player selama bermain
+    /// </summary>
     [SerializeField]
     public static float hiScoreCount;
 
-    public float pointsPerSecond = 7;
+    /// <summary>
+    /// untuk menentukan jumlah score yang didapatkan oleh player per detik
+    /// </summary>
+    public float pointsPerSecond = 5;
+
 
     private bool scoreIncreasing=true;
 
